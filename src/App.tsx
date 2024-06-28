@@ -1,26 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MyCustomButtonComponent from "./components/MyCustomButtonComponent";
+import AnotherButtonComponent from "./components/AnotherButtonComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <>
+    <MyCustomButtonComponent label={'Click me '}>HERE </MyCustomButtonComponent>
+    <AnotherButtonComponent label={'do not click me '}>____ </AnotherButtonComponent>
+        </>
+    );
+};
 
 export default App;
