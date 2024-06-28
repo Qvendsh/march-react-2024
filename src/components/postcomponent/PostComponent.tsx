@@ -14,6 +14,7 @@ const PostComponent:FC<IProps> = ({post,getComms}) => {
         }}>show comments of this post</button>
         </div>
     );
+
 };
 
 export default PostComponent;
