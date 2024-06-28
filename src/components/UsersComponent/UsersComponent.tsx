@@ -28,7 +28,8 @@ const UsersComponent = () => {
           <hr/>
           <div>
               {
-                  Users.map((user)=>(<UserComponent key={user.id} user={user} getPosts={getPosts}/>))
+                  Users.map((user)=>(
+                      <UserComponent key={user.id} user={user} getPosts={getPosts}/>))
               }
           </div>
           <hr/>
