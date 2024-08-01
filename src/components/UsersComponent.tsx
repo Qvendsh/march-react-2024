@@ -1,10 +1,22 @@
-import React, {useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
+import {IUserModel} from "../models/IUserModel";
 
-const UsersComponent = () => {
+interface IProps{
+    Users:IUserModel[]
+}
+const UsersComponent:FC<IProps> = ({Users}) => {
+    const [users, setUsers] = useState()
+    useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(value => value.json())
+            .then(value => setUsers(value))
+    }, []);
     return (
-        <div>
-
-        </div>
+        <ul>
+            {
+                Users.map(User=>(<li>{User.id} {User.name}</li>))
+            }
+        </ul>
     );
 };
 
