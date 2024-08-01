@@ -5,16 +5,10 @@ interface IProps{
     Users:IUserModel[]
 }
 const UsersComponent:FC<IProps> = ({Users}) => {
-    const [users, setUsers] = useState()
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then(value => value.json())
-            .then(value => setUsers(value))
-    }, []);
     return (
         <ul>
             {
-                Users.map(User=>(<li>{User.id} {User.name}</li>))
+                Users.map(User=>(<li key={User.id}>{User.id} {User.name}</li>))
             }
         </ul>
     );

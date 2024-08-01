@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IPostModel} from "../models/IPostModel";
 
-const PostsComponent = () => {
+interface IProps{
+    Posts:IPostModel[]
+}
+const PostsComponent:FC<IProps> = ({Posts}) => {
     return (
-        <div>
-            posts
-        </div>
+        <ul>
+            {
+                Posts.map(value =>(<li key={value.id}>{value.id} {value.title}</li>))
+            }
+        </ul>
     );
 };
 
