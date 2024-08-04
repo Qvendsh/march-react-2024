@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ICommentModel} from "../models/ICommentModel";
 import CommentsComponent from "../components/CommentsComponent";
+import commentApiService from "../services/comment.api.service";
 
 const CommentsPage = () => {
     const [comments, setComments] = useState<ICommentModel[]>([])
-    fetch("https://jsonplaceholder.typicode.com/comments")
-        .then(value => value.json())
-        .then(value => setComments(value))
+    useEffect(() => {
+        commentApiService.getAllComments().then(value => setComments(value.data))
+    }, []);
     return (
         <div>
             <CommentsComponent Comments={comments}/>
