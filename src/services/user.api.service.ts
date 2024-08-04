@@ -3,7 +3,7 @@ import {IUserModel} from "../models/IUserModel";
 
 let  axiosInstance= axios.create({
     baseURL:"https://jsonplaceholder.typicode.com",
-    headers:{}
+    headers:{'Content-Type': 'application/json'}
 })
 
 const userApiService ={

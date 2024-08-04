@@ -3,7 +3,7 @@ import {ICommentModel} from "../models/ICommentModel";
 
 let axiosInstance = axios.create({
     baseURL:'https://jsonplaceholder.typicode.com',
-    headers: {}
+    headers: {'Content-Type': 'application/json'}
 })
 
 
