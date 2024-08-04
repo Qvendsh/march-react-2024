@@ -9,7 +9,7 @@ const CommentsComponent:FC<IProps> = ({Comments}) => {
     return (
         <ul>
             {
-                Comments.map(value => (<li key={value.id}>{value.id}{value.name}</li>))
+                Comments.map(value => (<li key={value.id}>{value.id} {value.name}</li>))
             }
         </ul>
     );

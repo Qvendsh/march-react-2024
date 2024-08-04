@@ -23,3 +23,4 @@ const PaginationComponent = () => {
 };
 
 export default PaginationComponent;
+////////// чомусь всі пости з'являються одразу

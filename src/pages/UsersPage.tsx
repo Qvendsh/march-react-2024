@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import UsersComponent from "../components/UsersComponent";
 import {IUserModel} from "../models/IUserModel";
-import {userApiService} from "../services/user.api.service";
+import {Outlet} from "react-router-dom";
+import userApiService from "../services/user.api.service";
 
 
 const UsersPage = () => {
@@ -11,6 +12,8 @@ const UsersPage = () => {
     }, []);
     return (
         <div>
+            <Outlet/>
+            <hr/>
             <UsersComponent Users={users}/>
         </div>
     );
