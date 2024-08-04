@@ -12,5 +12,17 @@ const userApiService ={
     }
 }
 
+const getPostsByUserId = async (userId:number)=>{
+    return await axiosInstance.get('/users/' + userId + '/posts')
+        .then((response) => response.data)
+}
 
-export default userApiService;
+const getCommentsByPostId = async (postId:number)=>{
+    return await axiosInstance.get('/posts/' + postId + '/comments')
+        .then((response) => response.data)
+}
+
+
+export {userApiService, getPostsByUserId, getCommentsByPostId}
+
+
